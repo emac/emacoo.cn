@@ -3,7 +3,7 @@
 *.pxm
 .DS_Store
 .htaccess
-config.php
+#config.php
 verify.php
 posts/*.md
 posts/*.jpg
