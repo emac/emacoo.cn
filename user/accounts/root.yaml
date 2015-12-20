@@ -1,0 +1,11 @@
+email: emac_0024@163.com
+fullname: Emac
+title: Administrator
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$S8e0rNUl2qMBtnDOzy20B.U2tMlZqeDCGoqWcJlg8gXtQphKnpJ9G

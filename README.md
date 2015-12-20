@@ -1,75 +1,110 @@
-Dropplets
-=========
+# ![](https://avatars1.githubusercontent.com/u/8237355?v=2&s=50) Grav
 
-Dropplets is a minimalist **Markdown** blogging platform focused on delivering just what you need in a blogging solution, but absolutely nothing you don't. When it comes to basic blogging, all you really want to do is write & publish which is where Dropplets excels. It's databaseless, so it installs on any server in just about 30 seconds. 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/cfd20465-d0f8-4a0a-8444-467f5b5f16ad/mini.png)](https://insight.sensiolabs.com/projects/cfd20465-d0f8-4a0a-8444-467f5b5f16ad) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/getgrav/grav?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## What's Markdown?
-Markdown is a text formatting syntax inspired on plain text email. It is extremely simple, memorizable and visually lightweight on artifacts so as not to hinder reading.
+Grav is a **Fast**, **Simple**, and **Flexible**, file-based Web-platform.  There is **Zero** installation required.  Just extract the ZIP archive, and you are already up and running.  It follows similar principles to other flat-file CMS platforms, but has a different design philosophy than most. Grav comes with a powerful **Package Management System** to allow for simple installation and upgrading of plugins and themes, as well as simple updating of Grav itself.
 
-> The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions.
+The underlying architecture of Grav is designed to use well-established and _best-in-class_ technologies to ensure that Grav is simple to use and easy to extend. Some of these key technologies include:
 
-## Getting Started
-- [Installation](#installation)
-- [Writing Posts](#writing-posts)
-- [Publishing Posts](#publishing-posts)
-- [Editing Posts](#editing-posts)
-- [Changing Settings](#changing-settings)
-- [Changing Templates](#changing-templates)
-- [Updating Dropplets](#updating-dropplets)
-- [License](#license)
+* [Twig Templating](http://twig.sensiolabs.org/): for powerful control of the user interface
+* [Markdown](http://en.wikipedia.org/wiki/Markdown): for easy content creation
+* [YAML](http://yaml.org): for simple configuration
+* [Parsedown](http://parsedown.org/): for fast Markdown and Markdown Extra support
+* [Doctrine Cache](http://docs.doctrine-project.org/en/2.0.x/reference/caching.html): layer for performance
+* [Pimple Dependency Injection Container](http://pimple.sensiolabs.org/): for extensibility and maintainability
+* [Symfony Event Dispatcher](http://symfony.com/doc/current/components/event_dispatcher/introduction.html): for plugin event handling
+* [Symfony Console](http://symfony.com/doc/current/components/console/introduction.html): for CLI interface
+* [Gregwar Image Library](https://github.com/Gregwar/Image): for dynamic image manipulation
 
-## Installation
-Dropplets is compatible with most server configurations and can be typically installed in under a minute using the few step-by-step instructions below:
+# Requirements
 
-1. Download the latest **release** and then extract the downloaded zip file.
-3. Upload the entire contents of the extracted zip file to your web server wherever you want Dropplets to be installed. 
-4. Pull up your site in any modern web browser (e.g. if you uploaded Dropplets to **yoursite.com**, load **yoursite.com** in your browser to finish the installation), then create and confirm your password.
+- PHP 5.4 or higher. Check the [required modules list](http://learn.getgrav.org/basics/requirements#php-requirements)
+- Check the [Apache](http://learn.getgrav.org/basics/requirements#apache-requirements) or [IIS](http://learn.getgrav.org/basics/requirements#iis-requirements) requirements
 
-## Writing Posts
-With Dropplets, you write your posts offline (using the text or Markdown editor of your choice) in Markdown format. Here's a handy [syntax guide](https://github.com/circa75/dropplets/wiki/Markdown-Syntax-Guide) if you need a little help with your Markdown skills. All posts for Dropplets **MUST** be composed using the following format:
+# QuickStart
 
-    # Your Post Title
-    - Post Author Name (e.g. "Dropplets")
-    - Post Author Twitter Handle (e.g. "dropplets")
-    - Publish Date in YYYY/MM/DD Format (e.g. "2013/04/28")
-    - Post Category (e.g. "Random Thoughts")
-    - Post Status (e.g. "published" or "draft")
+You have two options to get Grav:
 
-    Your post text starts here. 
-    
-All posts must also be saved with the **.md** file extension. For instance, if your post title is **My First Blog Post**, your post file should look like this:
+### Downloading a Grav Package
 
-    my-first-blog-post.md
+You can download a **ready-built** package from the [Downloads page on http://getgrav.org](http://getgrav.org/downloads)
 
-Some templates include the ability to add a post image or thumbnail along with your post in which should match your post file name like this:
+### From GitHub
 
-    my-first-blog-post.jpg
+1. Clone the Grav repository from [https://github.com/getgrav/grav]() to a folder in the webroot of your server, e.g. `~/webroot/grav`. Launch a **terminal** or **console** and navigate to the webroot folder:
+   ```
+   $ cd ~/webroot
+   $ git clone https://github.com/getgrav/grav.git
+   ```
 
-Post file names are used to structure post permalinks on your blog. So, a post file saved as **my-first-blog-post.md** will result in **yoursite.com/my-first-blog-post** as the post permalink.
+2. Install the **plugin** and **theme dependencies** by using the [Grav CLI application](http://learn.getgrav.org/advanced/grav-cli) `bin/grav`:
+   ```
+   $ cd ~/webroot/grav
+   $ bin/grav install
+   ```
 
-## Publishing Posts
-After you've finished writing your post offline, you can then publish your post using the Dropplets toolbar:
+Check out the [install procedures](http://learn.getgrav.org/basics/installation) for more information.
 
-1. Login to your Dropplets installation using the password you created during the installation and setup process.
-2. Click the Dropplet in your toolbar to select, upload and publish your post.
+# Adding Functionality
 
-## Editing Posts
-Re-upload your edited post file using the steps above. Doing this will automatically overwrite the existing post and publish your new edits. To delete a post, change the **Post Status** at the top of your post file to **draft**.
+You can download [plugins](http://getgrav.org/downloads/plugins) or [themes](http://getgrav.org/downloads/themes) manually from the appropriate tab on the [Downloads page on http://getgrav.org](http://getgrav.org/downloads), but the preferred solution is to use the [Grav Package Manager](http://learn.getgrav.org/advanced/grav-gpm) or `GPM`:
 
-## Changing Settings
-To change your blog settings, click the gear icon in the Dropplets toolbar. This will load the settings panel where you will be able to change all of your blog settings including your password.
+```
+$ bin/gpm index
+```
 
-## Changing Templates
-To change your blog template, click the star icon in the Dropplets toolbar. This will load the templates panel where you will be able to browse and change your blog template as well as purchase new premium templates.
+This will display all the available plugins and then you can install one or more with:
 
-## Updating Dropplets
-Eventually, we will be implementing auto-updates for the Dropplets platform, but until then, just replace everything but your **posts** directory and **config.php** when we release a new version of Dropplets.
+```
+$ bin/gpm install <plugin/theme>
+```
 
-## License
-Copyright (c) 2013 Circa75 Media, LLC
+# Updating
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+To update Grav you should use the [Grav Package Manager](http://learn.getgrav.org/advanced/grav-gpm) or `GPM`:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+```
+$ bin/gpm selfupgrade
+```
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+To update plugins and themes:
+
+```
+$ bin/gpm update
+```
+
+
+# Contributing
+We appreciate any contribution to Grav, whether it is related to bugs, grammar, or simply a suggestion or improvement.
+However, we ask that any contributions follow our simple guidelines in order to be properly received.
+
+All our projects follow the [GitFlow branching model][gitflow-model], from development to release. If you are not familiar with it, there are several guides and tutorials to make you understand what it is about.
+
+You will probably want to get started by installing [this very good collection of git extensions][gitflow-extensions].
+
+What you mainly want to know is that:
+
+- All the main activity happens in the `develop` branch. Any pull request should be addressed only to that branch. We will not consider pull requests made to the `master`.
+- It's very well appreciated, and highly suggested, to start a new feature whenever you want to make changes or add functionalities. It will make it much easier for us to just checkout your feature branch and test it, before merging it into `develop`
+
+# Getting Started
+
+* [What is Grav?](http://learn.getgrav.org/basics/what-is-grav)
+* [Install](http://learn.getgrav.org/basics/installation) Grav in few seconds
+* Understand the [Configuration](http://learn.getgrav.org/basics/grav-configuration)
+* Take a peek at our available free [Skeletons](http://getgrav.org/downloads/skeletons#extras)
+* If you have questions, check out `#grav` on irc.freenode.net
+* Have fun!
+
+# Exploring more
+
+* Have a look at our [Basic Tutorial](http://learn.getgrav.org/basics/basic-tutorial)
+* Dive into more [advanced](http://learn.getgrav.org/advanced) functions
+
+# License
+
+See [LICENSE](LICENSE.txt)
+
+
+[gitflow-model]: http://nvie.com/posts/a-successful-git-branching-model/
+[gitflow-extensions]: https://github.com/nvie/gitflow
