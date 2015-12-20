@@ -1,5 +1,5 @@
 ---
-title: 陋室
+title: 拾贝
 published: true
 process:
     markdown: true
@@ -9,4 +9,3 @@ cache_enable: true
 visible: true
 ---
 
-# Welcome, my friend!

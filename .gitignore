@@ -16,3 +16,6 @@ plugins/switcher.php
 
 cache/*.png
 cache/*.jpeg
+
+cache/
+logs/
