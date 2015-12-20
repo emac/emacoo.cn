@@ -48,14 +48,14 @@
         {% endif %}
     {% elseif truncate and page.summary != page.content %}
         {{ page.summary }}
-        <p><a href="{{ page.url }}">Continue Reading...</a></p>
+        <p><a href="{{ page.url }}">继续阅读...</a></p>
     {% elseif truncate %}
         {% if page.summary != page.content %}
             {{ page.content|truncate(550) }}
         {% else %}
             {{ page.content }}
         {% endif %}
-        <p><a href="{{ page.url }}">Continue Reading...</a></p>
+        <p><a href="{{ page.url }}">继续阅读...</a></p>
     {% else %}
         {{ page.content }}
         {% set show_prev_next = true %}

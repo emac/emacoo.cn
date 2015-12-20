@@ -1,5 +1,5 @@
 ---
-title: 拾贝
+title: 麦壳
 published: true
 process:
     markdown: true
@@ -8,4 +8,6 @@ routable: true
 cache_enable: true
 visible: true
 ---
+
+# Welcome, my friend!
 
