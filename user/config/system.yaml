@@ -24,6 +24,7 @@ pages:
   publish_dates: true
   process:
     markdown: true
+    twig: false
   events:
     page: true
     twig: true
@@ -102,5 +103,5 @@ media:
   upload_limit: 0
 session:
   enabled: true
-  timeout: 1800
+  timeout: 86400
   name: grav-site
