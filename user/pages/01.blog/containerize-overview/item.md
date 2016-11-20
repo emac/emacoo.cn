@@ -1,5 +1,5 @@
 ---
-title: 创新不是一个可选项
+title: 容器化改造系列之一：总览
 published: false
 visible: true
 summary:
@@ -8,6 +8,6 @@ summary:
 taxonomy:
     tag:
         - 原创
-        - startup
+        - containerize
 ---
 

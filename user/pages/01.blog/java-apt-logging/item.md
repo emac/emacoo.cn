@@ -1,8 +1,15 @@
 ---
 title: 【Java进阶】利用APT优雅的实现统一日志格式
+published: true
+date: '10-07-2016 00:00'
+visible: true
 summary:
     enabled: '1'
     format: short
+taxonomy:
+    tag:
+        - 原创
+        - java
 ---
 
 #### 统一日志格式的几种方式
